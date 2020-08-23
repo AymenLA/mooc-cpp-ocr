@@ -16,7 +16,7 @@ Personnage::Personnage(string nomPersonnage): m_vie(100), m_mana(100), m_nomPers
 
 }
 
-Personnage::Personnage(): m_vie(100), m_mana(100), m_nomPersonnage("Paysant deter"), m_arme("Epée rouillée", 10)
+Personnage::Personnage(): m_vie(100), m_mana(100), m_nomPersonnage("Paysan deter"), m_arme("Epée rouillée", 10)
 {
 
 }
