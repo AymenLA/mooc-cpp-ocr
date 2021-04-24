@@ -1,0 +1,31 @@
+{
+    "cours":"programmation",
+    "type":[
+        {
+            "enligne": true,
+            "site":"openclassrooms",
+            "url":"https://openclassrooms.com/fr/courses/1894236-programmez-avec-le-langage-c/1897344-creez-les-classes-partie-1-2"
+        }
+    ],
+    "sujet":[
+        {
+            "langage":[
+                {
+                    "C++":1,
+                    "c":0,
+                    "java":0,
+                    "python":0,
+                    "niveau":"difficile"
+                }
+            ]
+
+        }
+    ],
+    "volume":[
+        {
+            "heures":50,
+            "progression":35
+        }
+    ],
+    "duree":6
+}
