@@ -31,7 +31,39 @@ class Duree
     public:
     void AfficherDuree(void);
 
-    Duree(std::uint32_t heure = 0, std::uint32_t minute = 0, std::uint32_t seconde = 0);
+    /**
+     * @brief Constructor of class Duree
+     * 
+     * @param[in] heure hours count
+     * @param[in] minute minutes count
+     * @param[in] seconde seconds count
+     * 
+     */ 
+    Duree(std::uint32_t heure , std::uint32_t minute, std::uint32_t seconde);
+
+    /**
+     * @brief Constructor of class Duree
+     * 
+     * @param[in] minute minutes count
+     * @param[in] seconde seconds count
+     * 
+     */ 
+    Duree(std::uint32_t minute, std::uint32_t seconde);
+
+    /**
+     * @brief Constructor of class Duree
+     * 
+     * @param[in] seconde seconds count
+     * 
+     */ 
+    Duree(std::uint32_t seconde);
+
+    /**
+     * @brief Constructor of class Duree
+     * 
+     */ 
+    Duree(void);
+
     ~Duree();
 
     private:
