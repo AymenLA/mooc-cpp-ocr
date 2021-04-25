@@ -12,6 +12,8 @@ set(MAIN_SOURCE_DIR main/src)
 set(MAIN_INCLUDE_DIR main/include)
 
 # sources and headers dir for components component
+set(COMPONENT_ZFRACTION_SOURCE_DIR components/class_ZFraction/src)
+set(COMPONENT_ZFRACTION_INCLUDE_DIR components/class_ZFraction/include)
 
 # sources and headers dir for librairies
 
@@ -19,12 +21,15 @@ set(MAIN_INCLUDE_DIR main/include)
 set(INSTALL_DIR ../build)
 
 # additional includes
-include_directories(${MAIN_INCLUDE_DIR})
+include_directories(${MAIN_INCLUDE_DIR}
+                    ${COMPONENT_ZFRACTION_INCLUDE_DIR})
 
-set(TARGET_SOURCES ${MAIN_SOURCE_DIR}/main.cpp)
+set(TARGET_SOURCES ${MAIN_SOURCE_DIR}/main.cpp
+                   ${COMPONENT_ZFRACTION_SOURCE_DIR}/class_ZFraction.cpp)
 
 
-set(HEADER_FILES ${MAIN_INCLUDE_DIR}/application_ecode.h)
+set(HEADER_FILES ${MAIN_INCLUDE_DIR}/application_ecode.h
+                 ${COMPONENT_ZFRACTION_INCLUDE_DIR}/class_ZFraction.hpp)
 
 
 set(CMAKE_BUILD_TYPE Debug)
