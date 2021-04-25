@@ -99,8 +99,74 @@ Duree::~Duree()
 
 }
 
+bool Duree::estEgale(Duree const &b) const
+{
+    return ((m_heure == b.m_heure) 
+    && (m_minute == b.m_minute) 
+    && (m_seconde == b.m_seconde));
+}
 
-void Duree::AfficherDuree(void)
+bool Duree::estDifferent(Duree const &b) const
+{
+    return (
+       ((m_heure != b.m_heure) 
+     && (m_minute != b.m_minute) 
+     && (m_minute != b.m_minute))
+    || ((m_minute == b.m_minute) 
+     && (m_minute != b.m_minute) 
+     && (m_minute != b.m_minute))
+    || ((m_minute == b.m_minute) 
+     && (m_minute == b.m_minute) 
+     && (m_minute != b.m_minute))
+     );
+}
+
+bool Duree::estSupperieur(Duree const &b) const
+{
+    return (
+        (m_heure > b.m_heure) 
+    || ((m_heure == b.m_heure) 
+     && (m_minute > b.m_minute))
+    || ((m_heure == b.m_heure) 
+     && (m_minute == b.m_minute) 
+     && (m_seconde > b.m_seconde))
+     );  
+}
+
+bool Duree::estInferieur(Duree const &b) const
+{
+    return (
+        (m_heure < b.m_heure) 
+    || ((m_heure == b.m_heure) 
+     && (m_minute < b.m_minute))
+    || ((m_heure == b.m_heure) 
+     && (m_minute == b.m_minute) 
+     && (m_seconde < b.m_seconde))
+     );  
+}
+
+Duree &Duree::operator+=(Duree const &a)
+{
+    m_seconde += a.m_seconde;
+    m_minute += a.m_minute;
+    m_heure += a.m_heure;
+
+    if(m_seconde >= 60)
+    {
+        m_minute += m_minute + m_seconde / 60;
+        m_seconde = m_seconde % 60;
+    }
+
+    if(m_minute >= 60)
+    {
+        m_heure += m_heure + m_minute / 60;
+        m_minute = m_minute % 60;
+    }
+
+    return *this;
+}
+
+void Duree::AfficherDuree(void) const
 {
     // set default empty space to be filled with 0
     std::cout.fill('0');
@@ -113,3 +179,39 @@ void Duree::AfficherDuree(void)
     << std::endl;
 }
 
+bool operator== (Duree const &a, Duree const &b)
+{
+    return a.estEgale(b);
+}
+
+bool operator!= (Duree const &a, Duree const &b)
+{
+    return a.estDifferent(b);
+}
+
+bool operator>= (Duree const &a, Duree const &b)
+{
+    return (a.estSupperieur(b) || a.estEgale(b));
+}
+
+bool operator> (Duree const &a, Duree const &b)
+{
+    return (a.estSupperieur(b));
+}
+
+bool operator<= (Duree const &a, Duree const &b)
+{
+    return (a.estInferieur(b) || a.estEgale(b));
+}
+
+bool operator< (Duree const &a, Duree const &b)
+{
+    return (a.estInferieur(b));
+}
+
+Duree operator+ (Duree const &a, Duree const &b)
+{
+    Duree another(a);
+    another += b;
+    return another;
+}

@@ -39,11 +39,54 @@ int32_t main(int32_t argc, char ** argv)
     Duree temps_4(8955);
 
     // using methode AfficherDuree to print current Duree temps_x
+    std::cout << "temps_0 :" << std::endl;
     temps_0.AfficherDuree();
+    std::cout << "temps_1 :" << std::endl;
     temps_1.AfficherDuree();
+    std::cout << "temps_2 :" << std::endl;
     temps_2.AfficherDuree();
+    std::cout << "temps_3 :" << std::endl;
     temps_3.AfficherDuree();
+    std::cout << "temps_4 :" << std::endl;
     temps_4.AfficherDuree();
 
+    // using Operators to compare objects
+    if(temps_0 >= temps_2)
+    {
+        std::cout << "temps_0 >= temps_2 = vrai" << std::endl;
+    }
+    else
+    {
+        if(temps_0 <= temps_2)
+        {
+            std::cout << "temps_0 <= temps_2 = vrai" << std::endl; 
+        }
+        
+    }
+
+    if(temps_3 > temps_4)
+    {
+        std::cout << "temps_3 > temps_4 = vrai" << std::endl;
+    }
+    else
+    {
+        if(temps_3 < temps_4)
+        {
+            std::cout << "temps_3 < temps_4 = vrai" << std::endl; 
+        }
+        
+    }
+
+    // adding two objects :
+    std::cout << "temps_2 = ";
+    temps_2.AfficherDuree();
+    std::cout << "+" << std::endl; 
+    std::cout << "temps_4 = ";
+    temps_4.AfficherDuree();
+    std::cout << "=" << std::endl;
+
+    temps_0 = temps_2 + temps_4;
+    temps_0.AfficherDuree();
+    
     return ret_value;
 }
