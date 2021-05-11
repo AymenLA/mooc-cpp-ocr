@@ -28,9 +28,17 @@ class ZFraction
 {
     public:
     ZFraction();
+    ZFraction(std::int32_t numerateur);
+    ZFraction(std::int32_t numerateur, std::int32_t denominateur);
+
+    std::int32_t DenominateurCommun(std::int32_t numerateur, std::int32_t denominateur);
+
     ~ZFraction();
 
     private:
+
+    std::int32_t m_numerateur;
+    std::int32_t m_denominateur;
 };
 
 #endif /* _ZFRACTION_HPP_ */
