@@ -30,8 +30,11 @@ using namespace std;
 int32_t main(int32_t argc, char ** argv)
 {
     int32_t ret_value = APP_ECODE_OK;
-    ZFraction a(3,5);
+    ZFraction a(3,5), b(2,1), c(8,10);
 
-    std::cout << a.DenominateurCommun(10,15) << std::endl;
+    cout << a;
+    cout << b;
+    cout << c;
+
     return ret_value;
 }

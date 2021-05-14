@@ -11,6 +11,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include <iostream>
+#include <iomanip>
 #include <cstdint>
 
 /* Public defines ------------------------------------------------------------*/
@@ -31,14 +32,17 @@ class ZFraction
     ZFraction(std::int32_t numerateur);
     ZFraction(std::int32_t numerateur, std::int32_t denominateur);
 
-    std::int32_t DenominateurCommun(std::int32_t numerateur, std::int32_t denominateur);
-
     ~ZFraction();
+
+    void Afficher(std::ostream& flux) const ;
 
     private:
 
     std::int32_t m_numerateur;
     std::int32_t m_denominateur;
 };
+
+std::int32_t DenominateurCommun(std::int32_t numerateur, std::int32_t denominateur);
+std::ostream& operator<<(std::ostream& flux, ZFraction const& fraction);
 
 #endif /* _ZFRACTION_HPP_ */
