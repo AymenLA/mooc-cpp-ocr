@@ -35,6 +35,12 @@ class ZFraction
     ~ZFraction();
 
     void Afficher(std::ostream& flux) const ;
+    ZFraction &operator+= (ZFraction const &a);
+    ZFraction &operator-= (ZFraction const &a);
+    ZFraction &operator*= (ZFraction const &a);
+    ZFraction &operator/= (ZFraction const &a);
+
+    bool estEgale(ZFraction const &a) const ;
 
     private:
 
@@ -44,5 +50,16 @@ class ZFraction
 
 std::int32_t DenominateurCommun(std::int32_t numerateur, std::int32_t denominateur);
 std::ostream& operator<<(std::ostream& flux, ZFraction const& fraction);
+ZFraction operator+ (ZFraction const &a, ZFraction const &b);
+ZFraction operator- (ZFraction const &a, ZFraction const &b);
+ZFraction operator* (ZFraction const &a, ZFraction const &b);
+ZFraction operator/ (ZFraction const &a, ZFraction const &b);
+
+
+bool operator>= (ZFraction const &a, ZFraction const &b);
+bool operator> (ZFraction const &a, ZFraction const &b);
+bool operator<= (ZFraction const &a, ZFraction const &b);
+bool operator< (ZFraction const &a, ZFraction const &b);
+bool operator!= (ZFraction const &a, ZFraction const &b);
 
 #endif /* _ZFRACTION_HPP_ */
