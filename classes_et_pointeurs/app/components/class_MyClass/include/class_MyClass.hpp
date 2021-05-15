@@ -1,7 +1,7 @@
 #ifndef _MYCLASS_HPP_
 #define _MYCLASS_HPP_
 /**
- * @file ZFraction.hpp
+ * @file class_MyClass.hpp
  * @brief 
  * @note 
  *
