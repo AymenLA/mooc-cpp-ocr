@@ -1,0 +1,31 @@
+{
+    "cours":"programmation",
+    "type":[
+        {
+            "enligne": true,
+            "site":"openclassrooms",
+            "https://openclassrooms.com/fr/courses/1894236-programmez-avec-le-langage-c/1898260-associez-les-classes-et-les-pointeurs"
+        }
+    ],
+    "sujet":[
+        {
+            "langage":[
+                {
+                    "C++":1,
+                    "c":0,
+                    "java":0,
+                    "python":0,
+                    "niveau":"difficile"
+                }
+            ]
+
+        }
+    ],
+    "volume":[
+        {
+            "heures":50,
+            "progression":44
+        }
+    ],
+    "duree":6
+}
