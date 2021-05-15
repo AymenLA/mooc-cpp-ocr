@@ -146,6 +146,12 @@ bool ZFraction::estEgale(ZFraction const &a) const
             (m_denominateur == a.m_denominateur));
 }
 
+bool ZFraction::estSupperieur(ZFraction const &a) const
+{
+    return ((m_numerateur > a.m_numerateur) && (m_denominateur <= a.m_denominateur)
+    );  
+}
+
 std::ostream& operator<<(std::ostream &flux, ZFraction const &fraction)
 {
     fraction.Afficher(flux);
@@ -183,4 +189,14 @@ ZFraction operator/ (ZFraction const &a, ZFraction const &b)
 bool operator!= (ZFraction const &a, ZFraction const &b)
 {
     return !a.estEgale(b);
+}
+
+bool operator== (ZFraction const &a, ZFraction const &b)
+{
+    return a.estEgale(b);
+}
+
+bool operator> (ZFraction const &a, ZFraction const &b)
+{
+    return a.estSupperieur(b);
 }

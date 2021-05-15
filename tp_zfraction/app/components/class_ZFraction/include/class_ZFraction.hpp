@@ -41,6 +41,7 @@ class ZFraction
     ZFraction &operator/= (ZFraction const &a);
 
     bool estEgale(ZFraction const &a) const ;
+    bool estSupperieur(ZFraction const &b) const ;
 
     private:
 
@@ -56,6 +57,7 @@ ZFraction operator* (ZFraction const &a, ZFraction const &b);
 ZFraction operator/ (ZFraction const &a, ZFraction const &b);
 
 
+bool operator== (ZFraction const &a, ZFraction const &b);
 bool operator>= (ZFraction const &a, ZFraction const &b);
 bool operator> (ZFraction const &a, ZFraction const &b);
 bool operator<= (ZFraction const &a, ZFraction const &b);

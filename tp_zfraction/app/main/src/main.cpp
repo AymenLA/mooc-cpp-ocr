@@ -30,34 +30,26 @@ using namespace std;
 int32_t main(int32_t argc, char ** argv)
 {
     int32_t ret_value = APP_ECODE_OK;
-    ZFraction a(63,87), b(2,1), c(8,10), somme, soustraction, produit, division;
-    ZFraction d(3,15), e(9,45);
+    ZFraction a(4,5);      //Déclare une fraction valant 4/5
+    ZFraction b(2);        //Déclare une fraction valant 2/1 (ce qui vaut 2)
+    ZFraction c,d;         //Déclare deux fractions valant 0
 
-    cout << a << endl;
-    cout << b << endl;
-    cout << c << endl;
+    c = a+b;               //Calcule 4/5 + 2/1 = 14/5
 
-    somme = a + c;
-    soustraction = a - c;
-    produit = a * c;
-    division = a / c; 
+    d = a*b;               //Calcule 4/5 * 2/1 = 8/5
 
-    cout << a << " + " << c << " = " << somme  << endl;
-    cout << a << " - " << c << " = " << soustraction  << endl;
-    cout << a << " * " << c << " = " << produit  << endl;
-    cout << a << " / " << c << " = " << division  << endl;
+    cout << a << " + " << b << " = " << c << endl;
 
+    cout << a << " * " << b << " = " << d << endl;
 
-    cout << d << " + " << e << " = ?"  << endl;
-
-    if(d != e)
-    {
-       cout << d << " différent de " << e << endl;
-    }
+    if(a > b)
+        cout << "a est plus grand que b." << endl;
+    else if(a==b)
+        cout << "a est egal a b." << endl;
     else
-    {
-       cout << d << " est égale à " << e << endl;
-    };
+        cout << "a est plus petit que b." << endl;
+
+    return 0;
 
     return ret_value;
 }
