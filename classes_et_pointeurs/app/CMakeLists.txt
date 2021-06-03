@@ -11,8 +11,11 @@ set(MAIN_SOURCE_DIR main/src)
 set(MAIN_INCLUDE_DIR main/include)
 
 # sources and headers dir for components component
-set(COMPONENT_MYCLASS_SOURCE_DIR components/class_MyClass/src)
-set(COMPONENT_MYCLASS_INCLUDE_DIR components/class_MyClass/include)
+set(COMPONENT_PERSONNAGE_SOURCE_DIR components/Personnage/src)
+set(COMPONENT_PERSONNAGE_INCLUDE_DIR components/Personnage/include)
+
+set(COMPONENT_ARME_SOURCE_DIR components/Arme/src)
+set(COMPONENT_ARME_INCLUDE_DIR components/Arme/include)
 
 # sources and headers dir for librairies
 
@@ -21,14 +24,17 @@ set(INSTALL_DIR ../build)
 
 # additional includes
 include_directories(${MAIN_INCLUDE_DIR}
-                    ${COMPONENT_MYCLASS_INCLUDE_DIR})
+                    ${COMPONENT_PERSONNAGE_INCLUDE_DIR}
+                    ${COMPONENT_ARME_INCLUDE_DIR})
 
 set(TARGET_SOURCES ${MAIN_SOURCE_DIR}/main.cpp
-                   ${COMPONENT_MYCLASS_SOURCE_DIR}/class_MyClass.cpp)
+                   ${COMPONENT_PERSONNAGE_SOURCE_DIR}/class_Personnage.cpp
+                   ${COMPONENT_ARME_SOURCE_DIR}/class_Arme.cpp)
 
 
 set(HEADER_FILES ${MAIN_INCLUDE_DIR}/application_ecode.h
-                 ${COMPONENT_MYCLASS_INCLUDE_DIR}/class_MyClass.hpp)
+                 ${COMPONENT_PERSONNAGE_INCLUDE_DIR}/class_Personnage.hpp
+                 ${COMPONENT_ARME_INCLUDE_DIR}/class_Arme.hpp)
 
 
 set(CMAKE_BUILD_TYPE Debug)

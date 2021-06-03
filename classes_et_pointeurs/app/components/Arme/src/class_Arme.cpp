@@ -1,14 +1,15 @@
 /**
- * @file class_MyClass.cpp
+ * @file class_Arme.cpp
  * @brief 
  *
  * @copyright
  */
 /* Includes ------------------------------------------------------------------*/
 #include <iostream>
+#include <string>
 #include <cstdint>
 
-#include "class_MyClass.hpp"
+#include "class_Arme.hpp"
 /* Private defines -----------------------------------------------------------*/
 
 /* Private declarations ------------------------------------------------------*/
@@ -23,17 +24,25 @@
 
 /* Public functions ----------------------------------------------------------*/
 
-MyClass::MyClass()
+Arme::Arme()
 {
-    m_member = 0;;
+    m_nom = "baton";
+    m_degat = 5;
+    m_deterioration = 0;
+    m_coup_fatal = false;
 };
 
-MyClass::MyClass(std::int32_t member): m_member(member)
+Arme::Arme(std::string nom, std::uint32_t degat, std::uint32_t deterioration): m_nom(nom), m_deterioration(deterioration), m_degat(degat)
+{
+    m_coup_fatal = false;
+};
+
+Arme::Arme(std::string nom, std::uint32_t degat, bool fatalite, std::uint32_t deterioration): m_nom(nom), m_deterioration(deterioration), m_degat(degat), m_coup_fatal(fatalite)
 {
 
 };
 
-MyClass::~MyClass()
+Arme::~Arme()
 {
     
 };

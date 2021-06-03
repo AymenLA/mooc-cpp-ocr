@@ -1,7 +1,7 @@
-#ifndef _MYCLASS_HPP_
-#define _MYCLASS_HPP_
+#ifndef _CLASS_PERSONNAGE_HPP_
+#define _CLASS_PERSONNAGE_HPP_
 /**
- * @file class_MyClass.hpp
+ * @file class_Personnage.hpp
  * @brief 
  * @note 
  *
@@ -14,6 +14,8 @@
 #include <iomanip>
 #include <cstdint>
 
+#include <class_Arme.hpp>
+
 /* Public defines ------------------------------------------------------------*/
 
 /* Public declarations -------------------------------------------------------*/
@@ -25,18 +27,20 @@
 /* Public typedefs -----------------------------------------------------------*/
 
 /* Public functions ----------------------------------------------------------*/
-class MyClass
+class Personnage
 {
     public:
-    MyClass();
-    MyClass(std::int32_t member);
+    Personnage();
+    Personnage(std::string nom, std::uint32_t vie, Arme arme);
 
-    ~MyClass();
+    ~Personnage();
 
     private:
 
-    std::int32_t m_member;
+    std::string m_nom;
+    Arme m_Arme;
+    std::uint32_t m_vie;
 };
 
 
-#endif /* _MYCLASS_HPP_ */
+#endif /* _CLASS_PERSONNAGE_HPP_ */

@@ -1,18 +1,15 @@
 /**
- * @file main.cpp
+ * @file class_Personnage.cpp
  * @brief 
  *
  * @copyright
  */
 /* Includes ------------------------------------------------------------------*/
 #include <iostream>
+#include <string>
 #include <cstdint>
 
-
-#include "application_ecode.h"
 #include "class_Personnage.hpp"
-
-using namespace std;
 /* Private defines -----------------------------------------------------------*/
 
 /* Private declarations ------------------------------------------------------*/
@@ -26,9 +23,19 @@ using namespace std;
 /* Private functions ---------------------------------------------------------*/
 
 /* Public functions ----------------------------------------------------------*/
-int32_t main(int32_t argc, char ** argv)
-{
-    int32_t ret_value = APP_ECODE_OK;;
 
-    return ret_value;
-}
+Personnage::Personnage()
+{
+    m_vie = 100;
+    m_nom = "npc";
+};
+
+Personnage::Personnage(std::string nom, std::uint32_t vie, Arme arme): m_nom(nom), m_vie(vie), m_Arme(arme)
+{
+
+};
+
+Personnage::~Personnage()
+{
+    
+};
